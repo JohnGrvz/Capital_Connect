@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publicar mi empresa — Capital Connect</title>
+  <meta name="description" content="Registra tu empresa en Capital Connect y presenta tu ronda a la red de inversionistas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-pagina="publicar">
+
+<div id="site-header"></div>
+
+<main>
+  <div class="phead">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">Inicio</a> / Publicar mi empresa</p>
+      <h1>Registra tu empresa</h1>
+      <p>Con estos datos armamos el expediente inicial. Después te pedimos los documentos y definimos juntos las condiciones de la ronda.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="split narrow">
+        <div>
+          <div class="aviso">
+            <h3>Antes de empezar</h3>
+            <p>La empresa debe llevar al menos dieciocho meses operando, tener ventas anuales desde $300 millones y estar al día con sus obligaciones tributarias. Registrarse no tiene costo.</p>
+          </div>
+
+          <form class="form" id="form-empresa" novalidate>
+            <fieldset class="fieldset">
+              <legend>Datos de la empresa</legend>
+              <div class="form" style="gap:1.1rem;">
+                <div class="field">
+                  <label for="nombre">Razón social</label>
+                  <input id="nombre" name="nombre" type="text" placeholder="Nombre legal de la empresa">
+                  <p class="error" id="error-nombre"></p>
+                </div>
+                <div class="row2">
+                  <div class="field">
+                    <label for="sector">Sector</label>
+                    <input id="sector" name="sector" type="text" placeholder="Agroindustria, logística, salud...">
+                    <p class="error" id="error-sector"></p>
+                  </div>
+                  <div class="field">
+                    <label for="ciudad">Ciudad</label>
+                    <input id="ciudad" name="ciudad" type="text" placeholder="Medellín">
+                    <p class="error" id="error-ciudad"></p>
+                  </div>
+                </div>
+                <div class="row2">
+                  <div class="field">
+                    <label for="nit">NIT (opcional)</label>
+                    <input id="nit" name="nit" type="text" placeholder="900123456-7">
+                  </div>
+                  <div class="field">
+                    <label for="anios_operacion">Años de operación</label>
+                    <input id="anios_operacion" name="anios_operacion" type="text" inputmode="numeric" placeholder="3">
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="ventas_anuales">Ventas del último año (COP)</label>
+                  <input id="ventas_anuales" name="ventas_anuales" type="text" inputmode="numeric" placeholder="1.200.000.000">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="fieldset">
+              <legend>La ronda que buscas</legend>
+              <div class="form" style="gap:1.1rem;">
+                <div class="row2">
+                  <div class="field">
+                    <label for="instrumento">Instrumento</label>
+                    <select id="instrumento" name="instrumento">
+                      <option value="deuda">Préstamo</option>
+                      <option value="equity">Acciones</option>
+                      <option value="convertible">Convertible</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="monto_objetivo">Monto que necesitas (COP)</label>
+                    <input id="monto_objetivo" name="monto_objetivo" type="text" inputmode="numeric" placeholder="800.000.000">
+                    <p class="error" id="error-monto_objetivo"></p>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="plazo">Plazo deseado</label>
+                  <input id="plazo" name="plazo" type="text" placeholder="24 meses">
+                </div>
+                <div class="field">
+                  <label for="descripcion">¿Para qué es el capital?</label>
+                  <textarea id="descripcion" name="descripcion" placeholder="Explica en qué se usaría el dinero y cómo genera retorno. Esto es lo primero que lee un inversionista."></textarea>
+                  <p class="error" id="error-descripcion"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="fieldset">
+              <legend>Contacto</legend>
+              <div class="row2">
+                <div class="field">
+                  <label for="contacto_nombre">Nombre de quien responde</label>
+                  <input id="contacto_nombre" name="contacto_nombre" type="text" placeholder="Nombre y apellido">
+                </div>
+                <div class="field">
+                  <label for="contacto_email">Correo</label>
+                  <input id="contacto_email" name="contacto_email" type="email" placeholder="nombre@empresa.com">
+                  <p class="error" id="error-contacto_email"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div>
+              <button class="btn btn-lg" type="submit" id="enviar">Enviar solicitud</button>
+            </div>
+            <p class="form-note">Al enviar aceptas que tratemos estos datos para evaluar la solicitud. La empresa queda en estado pendiente y no se publica hasta que la revise el equipo.</p>
+          </form>
+
+          <div id="resultado" style="display:none;"></div>
+        </div>
+
+        <div class="card">
+          <h3>Qué pasa después</h3>
+          <dl class="deflist">
+            <dt>1. Revisión inicial</dt>
+            <dd>Confirmamos que la empresa cumple los requisitos mínimos. Máximo 72 horas.</dd>
+            <dt>2. Documentos</dt>
+            <dd>Te pedimos cámara de comercio, estados financieros y reporte de centrales de riesgo.</dd>
+            <dt>3. Calificación</dt>
+            <dd>El comité asigna una calificación de A a D y propone las condiciones de la ronda.</dd>
+            <dt>4. Publicación</dt>
+            <dd>La operación aparece en la página de oportunidades y empieza a recibir compromisos.</dd>
+          </dl>
+          <p style="margin:1.6rem 0 0;">
+            ¿No sabes todavía si tu caso es viable? Usa el asistente de la esquina inferior derecha.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/datos-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-cliente.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/publicar.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>

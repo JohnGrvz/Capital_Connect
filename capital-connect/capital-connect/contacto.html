@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto — Capital Connect</title>
+  <meta name="description" content="Escríbele al equipo de Capital Connect si buscas capital o quieres invertir.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-pagina="contacto">
+
+<div id="site-header"></div>
+
+<main>
+  <div class="phead">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">Inicio</a> / Contacto</p>
+      <h1>Escríbenos</h1>
+      <p>Cuéntanos si buscas capital o si quieres invertir, y te contactamos dentro de los siguientes dos días hábiles.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="split narrow">
+        <div>
+          <form class="form" id="form-contacto" novalidate>
+            <div class="field">
+              <label for="perfil">¿Cómo llegas a Capital Connect?</label>
+              <select id="perfil" name="perfil">
+                <option>Busco capital para mi empresa</option>
+                <option>Quiero invertir</option>
+                <option>Represento un fondo o family office</option>
+                <option>Otro motivo</option>
+              </select>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="nombre">Nombre</label>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido">
+              </div>
+              <div class="field">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="empresa" type="text" placeholder="Razón social">
+              </div>
+            </div>
+            <div class="row2">
+              <div class="field">
+                <label for="correo">Correo</label>
+                <input id="correo" name="correo" type="email" placeholder="nombre@empresa.com">
+              </div>
+              <div class="field">
+                <label for="monto">Monto aproximado</label>
+                <input id="monto" name="monto" type="text" placeholder="$ en pesos colombianos">
+              </div>
+            </div>
+            <div class="field">
+              <label for="mensaje">Cuéntanos el caso</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Para qué es el capital, en qué etapa está la empresa o qué tipo de operación te interesa."></textarea>
+            </div>
+            <p class="error" id="error-contacto"></p>
+            <div><button class="btn btn-lg" type="submit">Enviar mensaje</button></div>
+            <p class="form-note">Al enviar aceptas que tratemos tus datos para responder esta solicitud.</p>
+          </form>
+
+          <div class="aviso" id="enviado" style="display:none;">
+            <h3>Mensaje enviado</h3>
+            <p>Recibimos tu solicitud. Te escribimos al correo registrado dentro de dos días hábiles.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Dónde estamos</h3>
+          <dl class="deflist">
+            <dt>Oficina</dt><dd>Carrera 43A #1-50, El Poblado, Medellín.</dd>
+            <dt>Correo</dt><dd>hola@capitalconnect.co</dd>
+            <dt>Teléfono</dt><dd>+57 604 555 0148</dd>
+            <dt>Horario</dt><dd>Lunes a viernes, 8:00 a 17:00.</dd>
+            <dt>Empresas en proceso</dt><dd>soporte@capitalconnect.co</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/datos-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-cliente.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/chatbot.js"></script>
+<script>
+  // Envío del formulario de contacto (demostración).
+  document.getElementById('form-contacto').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre');
+    const correo = document.getElementById('correo');
+    const error = document.getElementById('error-contacto');
+
+    if (!nombre.value.trim() || !/^\S+@\S+\.\S+$/.test(correo.value.trim())) {
+      error.textContent = 'Necesitamos al menos tu nombre y un correo válido.';
+      (!nombre.value.trim() ? nombre : correo).focus();
+      return;
+    }
+
+    error.textContent = '';
+    this.style.display = 'none';
+    document.getElementById('enviado').style.display = 'block';
+  });
+</script>
+</body>
+</html>

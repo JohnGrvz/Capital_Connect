@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oportunidades abiertas — Capital Connect</title>
+  <meta name="description" content="Empresas con ronda abierta en Capital Connect, con condiciones, avance y calificación de riesgo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-pagina="oportunidades">
+
+<div id="site-header"></div>
+
+<main>
+  <div class="phead">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html">Inicio</a> / Oportunidades</p>
+      <h1>Oportunidades abiertas</h1>
+      <p>Cada empresa pasó verificación financiera y de identidad. Los montos están en pesos colombianos y las condiciones son las vigentes esta semana.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <p class="fuente" id="fuente-datos"></p>
+
+      <div class="tabs" role="group" aria-label="Filtrar por instrumento">
+        <button class="tab" type="button" data-filter="todas" aria-pressed="true">Todas</button>
+        <button class="tab" type="button" data-filter="deuda" aria-pressed="false">Préstamo</button>
+        <button class="tab" type="button" data-filter="equity" aria-pressed="false">Acciones</button>
+        <button class="tab" type="button" data-filter="convertible" aria-pressed="false">Convertible</button>
+      </div>
+
+      <div class="deals" id="lista-empresas"></div>
+      <p class="estado-msg" id="estado-lista">Cargando operaciones...</p>
+
+      <p class="note">Los porcentajes de avance se actualizan cada vez que un inversionista confirma su compromiso. Una operación se cierra cuando alcanza el 100% o cuando vence el plazo de publicación habiendo superado el mínimo.</p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div>
+        <h2>¿Tu empresa debería estar en esta lista?</h2>
+        <p>Registra la operación y la revisamos en 72 horas.</p>
+      </div>
+      <div class="cta-actions"><a class="btn btn-lg" href="publicar.html">Publicar mi empresa</a></div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="js/config.js"></script>
+<script src="js/datos-demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-cliente.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/oportunidades.js"></script>
+<script src="js/chatbot.js"></script>
+</body>
+</html>
