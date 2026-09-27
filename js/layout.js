@@ -7,13 +7,7 @@
    ========================================================= */
 
 (function () {
-  const LOGO = `
-    <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <circle cx="6" cy="6" r="3.2" stroke="#F1F2ED" stroke-width="1.6"/>
-      <circle cx="18" cy="18" r="3.2" fill="#0E9A8C"/>
-      <path d="M8.4 8.4C10 10 10.5 12 11 14c.5 2 1.5 3 4 3.6"
-            stroke="#0E9A8C" stroke-width="1.6" stroke-linecap="round"/>
-    </svg>`;
+  const LOGO = '<img src="images/Logo_final.png" alt="" width="22" height="23" aria-hidden="true">';
 
   const MENU = [
     { id: 'inicio',         texto: 'Inicio',              url: 'index.html' },
