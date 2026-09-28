@@ -7,7 +7,7 @@
    ========================================================= */
 
 (function () {
-  const LOGO = '<img src="images/Logo_final.png" alt="" width="22" height="23" aria-hidden="true">';
+  const LOGO = '<img src="Images/Logo_final.png" alt="" width="22" height="23" aria-hidden="true">';
 
   const MENU = [
     { id: 'inicio',         texto: 'Inicio',              url: 'index.html' },
