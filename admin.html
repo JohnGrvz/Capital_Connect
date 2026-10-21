@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Administración — Capital Connect</title>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="Images/Logo_final.png" type="image/png">
+<style>
+  .adm { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  .adm-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .adm-login { max-width: 380px; margin: 4rem auto; display: grid; gap: .8rem; }
+  .adm input { padding: .6rem .7rem; font: inherit; border: 1px solid rgba(128,128,128,.4); border-radius: 6px; background: transparent; color: inherit; }
+  .adm-tabs { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1.5rem 0 1rem; }
+  .adm table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  .adm th, .adm td { text-align: left; padding: .6rem .5rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+  .adm small { opacity: .7; display: block; }
+  .adm .acciones { display: flex; gap: .3rem; flex-wrap: wrap; }
+  .adm .acciones button { font: inherit; font-size: .8rem; padding: .25rem .5rem; cursor: pointer; border: 1px solid rgba(128,128,128,.5); border-radius: 5px; background: transparent; color: inherit; }
+  .adm .peligro { border-color: #c0392b !important; color: #c0392b !important; }
+  .adm-msg { padding: .7rem 1rem; border: 1px solid rgba(128,128,128,.4); border-radius: 6px; margin: 1rem 0; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="adm">
+  <div class="adm-top">
+    <h1>Administración</h1>
+    <button class="btn btn-outline" id="salir" hidden>Cerrar sesión</button>
+  </div>
+  <div id="mensaje" class="adm-msg" hidden></div>
+
+  <form id="vista-login" class="adm-login" hidden>
+    <label>Correo <input id="correo" type="email" required autocomplete="username"></label>
+    <label>Contraseña <input id="clave" type="password" required autocomplete="current-password"></label>
+    <button class="btn" type="submit">Entrar</button>
+  </form>
+
+  <div id="vista-panel" hidden>
+    <div class="adm-tabs" id="tabs"></div>
+    <div class="tablewrap"><table><thead id="cabecera"></thead><tbody id="filas"></tbody></table></div>
+  </div>
+</div>
+<script src="js/config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-cliente.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

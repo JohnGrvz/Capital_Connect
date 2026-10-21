@@ -168,8 +168,8 @@ section{padding:5.2rem 0;}
 .step:last-child{border-right:none;padding-right:0;}
 .step:not(:first-child){padding-left:2rem;}
 .step-n{font-weight:600;font-size:.92rem;color:var(--teal-deep);display:block;margin-bottom:.7rem;}
-.step h3{font-size:1.25rem;margin-bottom:.55rem;}
-.step p{color:var(--muted);font-size:1rem;margin:0;}
+.step h3{font-size:1.25rem;margin-bottom:.55rem;color:var(--muted);}
+.step p{color:var(--fg);font-size:1rem;margin:0;}
 
 /* tabla */
 .tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;background:var(--surface);}

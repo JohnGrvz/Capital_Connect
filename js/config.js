@@ -13,8 +13,8 @@
    ========================================================= */
 
 window.CONFIG = {
-  SUPABASE_URL: '',      // ej: https://abcdefghijk.supabase.co
-  SUPABASE_ANON_KEY: '', // ej: eyJhbGciOiJIUzI1NiIsInR5cCI6...
+  SUPABASE_URL: 'https://fpcdxqhxydjfzzdwuapt.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_4JQ4ll7TTcm60szd4akC8g_eYO3Tco-', 
 
   // URL de la Edge Function que responde al chatbot.
   // Se completa sola si defines SUPABASE_URL; también la puedes

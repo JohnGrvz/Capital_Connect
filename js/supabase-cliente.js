@@ -11,6 +11,15 @@
 window.DB = (function () {
   let cliente = null;
 
+  // Columnas públicas de "empresas". Deben coincidir con el GRANT
+  // de schema.sql: el correo y el nombre de contacto NO están aquí.
+  const COLUMNAS_PUBLICAS = [
+    'id', 'creado_en', 'nombre', 'nit', 'sector', 'ciudad', 'descripcion',
+    'anios_operacion', 'ventas_anuales', 'instrumento', 'monto_objetivo',
+    'monto_comprometido', 'tasa', 'plazo', 'garantia', 'calificacion',
+    'valoracion', 'participacion', 'estado'
+  ].join(',');
+
   function obtenerCliente() {
     if (cliente) return cliente;
     if (!window.HAY_SUPABASE || !window.supabase) return null;
@@ -34,7 +43,7 @@ window.DB = (function () {
 
     const { data, error } = await db
       .from('empresas')
-      .select('*')
+      .select(COLUMNAS_PUBLICAS)
       .eq('estado', 'publicada')
       .order('creado_en', { ascending: false });
 
